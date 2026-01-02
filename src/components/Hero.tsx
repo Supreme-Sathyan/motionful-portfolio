@@ -64,7 +64,7 @@ const Hero = () => {
               className="border-border hover:bg-secondary/50 transition-all duration-200"
               asChild
             >
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Supreme-Sathyan" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
                 GitHub
               </a>

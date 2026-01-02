@@ -9,7 +9,7 @@ interface Project {
   outcome: string;
   origin?: string;
   type?: string;
-  liveDemo?: boolean;
+  liveDemo?: string;
   isResearch?: boolean;
 }
 
@@ -35,12 +35,64 @@ const projects: Project[] = [
     tech: ['React', 'Node.js', 'Supabase', 'Gemini API'],
     outcome: 'Smart itinerary planner with chatbot',
     origin: 'Backend & deployment (Vercel)',
-    liveDemo: true,
+    liveDemo: 'https://jharkhand-lovat.vercel.app',
   },
 ];
 
 const ProjectCard = ({ project, index, isInView }: { project: Project; index: number; isInView: boolean }) => {
   const [isHovered, setIsHovered] = useState(false);
+  
+  const CardContent = (
+    <div 
+      className="transition-transform duration-220"
+      style={{ transform: isHovered ? 'translateY(-3px)' : 'translateY(0)' }}
+    >
+      <div className="flex items-start justify-between mb-4">
+        <div>
+          <h3 className="text-xl font-semibold mb-1 group-hover:text-primary transition-colors duration-200">
+            {project.title}
+          </h3>
+          {project.isResearch && (
+            <span className="text-xs font-mono uppercase tracking-wider text-primary/80">
+              IEEE Review
+            </span>
+          )}
+        </div>
+        {project.liveDemo && (
+          <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors duration-200" />
+        )}
+      </div>
+      
+      <p className="text-muted-foreground text-sm mb-4">{project.problem}</p>
+      
+      <div className="flex flex-wrap gap-2 mb-4">
+        {project.tech.map((tech) => (
+          <span
+            key={tech}
+            className="px-2 py-1 text-xs font-mono bg-secondary/50 rounded text-muted-foreground"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+      
+      <p className="text-sm text-foreground/90">{project.outcome}</p>
+      
+      {project.origin && (
+        <p className="text-xs text-muted-foreground/70 mt-3 font-mono">
+          {project.origin}
+        </p>
+      )}
+    </div>
+  );
+
+  const cardClasses = "group card-elevated p-6 cursor-pointer transition-all duration-220 block";
+  const cardStyle = {
+    transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
+    boxShadow: isHovered 
+      ? '0 12px 40px -8px hsl(174 62% 47% / 0.15)' 
+      : '0 4px 24px -4px hsl(0 0% 0% / 0.4)',
+  };
   
   return (
     <motion.div
@@ -53,55 +105,22 @@ const ProjectCard = ({ project, index, isInView }: { project: Project; index: nu
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group card-elevated p-6 cursor-pointer transition-all duration-220"
-      style={{
-        transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
-        boxShadow: isHovered 
-          ? '0 12px 40px -8px hsl(174 62% 47% / 0.15)' 
-          : '0 4px 24px -4px hsl(0 0% 0% / 0.4)',
-      }}
     >
-      <div 
-        className="transition-transform duration-220"
-        style={{ transform: isHovered ? 'translateY(-3px)' : 'translateY(0)' }}
-      >
-        <div className="flex items-start justify-between mb-4">
-          <div>
-            <h3 className="text-xl font-semibold mb-1 group-hover:text-primary transition-colors duration-200">
-              {project.title}
-            </h3>
-            {project.isResearch && (
-              <span className="text-xs font-mono uppercase tracking-wider text-primary/80">
-                IEEE Review
-              </span>
-            )}
-          </div>
-          {project.liveDemo && (
-            <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors duration-200" />
-          )}
+      {project.liveDemo ? (
+        <a
+          href={project.liveDemo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cardClasses}
+          style={cardStyle}
+        >
+          {CardContent}
+        </a>
+      ) : (
+        <div className={cardClasses} style={cardStyle}>
+          {CardContent}
         </div>
-        
-        <p className="text-muted-foreground text-sm mb-4">{project.problem}</p>
-        
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tech.map((tech) => (
-            <span
-              key={tech}
-              className="px-2 py-1 text-xs font-mono bg-secondary/50 rounded text-muted-foreground"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-        
-        <p className="text-sm text-foreground/90">{project.outcome}</p>
-        
-        {project.origin && (
-          <p className="text-xs text-muted-foreground/70 mt-3 font-mono">
-            {project.origin}
-          </p>
-        )}
-      </div>
+      )}
     </motion.div>
   );
 };

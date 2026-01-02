@@ -65,7 +65,7 @@ const Navbar = () => {
         </div>
 
         <a
-          href="https://github.com"
+          href="https://github.com/Supreme-Sathyan"
           target="_blank"
           rel="noopener noreferrer"
           className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 font-mono"
