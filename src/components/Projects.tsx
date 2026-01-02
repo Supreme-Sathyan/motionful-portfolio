@@ -44,8 +44,8 @@ const ProjectCard = ({ project, index, isInView }: { project: Project; index: nu
   
   const CardContent = (
     <div 
-      className="transition-transform duration-220"
-      style={{ transform: isHovered ? 'translateY(-3px)' : 'translateY(0)' }}
+      className="transition-transform duration-200"
+      style={{ transform: isHovered ? 'translateY(-2px)' : 'translateY(0)' }}
     >
       <div className="flex items-start justify-between mb-4">
         <div>
@@ -86,12 +86,12 @@ const ProjectCard = ({ project, index, isInView }: { project: Project; index: nu
     </div>
   );
 
-  const cardClasses = "group card-elevated p-6 cursor-pointer transition-all duration-220 block";
+  const cardClasses = "group card-elevated p-6 cursor-pointer block";
   const cardStyle = {
-    transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
+    transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
     boxShadow: isHovered 
-      ? '0 12px 40px -8px hsl(174 62% 47% / 0.15)' 
-      : '0 4px 24px -4px hsl(0 0% 0% / 0.4)',
+      ? '0 8px 32px -8px hsl(169 40% 51% / 0.1)' 
+      : '0 4px 20px -4px hsl(0 0% 0% / 0.5)',
   };
   
   return (
