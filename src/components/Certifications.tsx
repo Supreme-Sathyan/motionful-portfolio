@@ -18,9 +18,9 @@ const Certifications = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.h2
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.52, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
           className="text-3xl md:text-4xl font-semibold mb-16"
         >
           Certifications
@@ -30,16 +30,16 @@ const Certifications = () => {
           {certifications.map((cert, index) => (
             <motion.div
               key={cert}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ 
-                duration: 0.52, 
+                duration: 0.45, 
                 ease: [0.4, 0, 0.2, 1], 
-                delay: 0.1 + index * 0.09 
+                delay: 0.1 + index * 0.08 
               }}
-              className="p-6 rounded-lg bg-card/50 border border-border/50 hover:border-primary/30 transition-all duration-200 group"
+              className="p-6 rounded-lg bg-card border border-border/40 hover:border-primary/40 transition-colors duration-200 group"
             >
-              <Award className="h-5 w-5 text-primary/60 group-hover:text-primary mb-4 transition-colors duration-200" />
+              <Award className="h-5 w-5 text-primary/70 group-hover:text-primary mb-4 transition-colors duration-200" />
               <p className="font-medium">{cert}</p>
             </motion.div>
           ))}

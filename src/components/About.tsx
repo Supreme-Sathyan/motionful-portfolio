@@ -70,9 +70,9 @@ const About = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.h2
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.52, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
           className="text-3xl md:text-4xl font-semibold mb-16"
         >
           About
@@ -98,10 +98,10 @@ const About = () => {
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-x-8 gap-y-4 text-sm">
+            <div className="flex flex-wrap gap-x-12 gap-y-4 text-sm">
               <div>
                 <span className="text-muted-foreground">CGPA</span>
-                <p className="text-2xl font-semibold text-gradient mt-1">
+                <p className="text-2xl font-semibold text-primary mt-1">
                   <AnimatedNumber value="8.388" delay={200} />
                 </p>
               </div>
@@ -126,7 +126,7 @@ const About = () => {
                   ease: [0.4, 0, 0.2, 1], 
                   delay: 0.15 + index * 0.09 
                 }}
-                className="flex items-start gap-4 p-4 rounded-lg bg-card/50 border border-border/50"
+                className="flex items-start gap-4 p-4 rounded-lg bg-card border border-border/40"
               >
                 <div className="flex-1">
                   <p className="text-sm text-muted-foreground mb-1">{stat.label}</p>

@@ -44,9 +44,9 @@ const Experience = () => {
     <section id="experience" ref={sectionRef} className="py-32 relative">
       <div className="container mx-auto px-6">
         <motion.h2
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.52, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
           className="text-3xl md:text-4xl font-semibold mb-16"
         >
           Experience & Events
@@ -54,7 +54,7 @@ const Experience = () => {
         
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border/50 -translate-x-1/2" />
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
           
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -72,7 +72,7 @@ const Experience = () => {
                 }`}
               >
                 {/* Dot */}
-                <div className="absolute left-0 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1/2 mt-2" />
+                <div className="absolute left-0 md:left-1/2 w-2 h-2 bg-primary rounded-full -translate-x-1/2 mt-2" />
                 
                 {/* Content */}
                 <div className={`ml-8 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
