@@ -6,6 +6,7 @@ const navItems = [
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 const Navbar = () => {
@@ -42,7 +43,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#" className="font-mono text-sm text-primary font-medium">
-          SS.
+          S2
         </a>
         
         <div className="hidden md:flex items-center gap-8">
@@ -64,14 +65,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        <a
-          href="https://github.com/Supreme-Sathyan"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 font-mono"
-        >
-          gh.
-        </a>
+        <div className="w-8" />
       </div>
     </motion.nav>
   );
