@@ -7,17 +7,19 @@ interface AnimatedNumberProps {
 }
 
 const AnimatedNumber = ({ value, delay }: AnimatedNumberProps) => {
-  const [displayed, setDisplayed] = useState('0');
+  const [displayed, setDisplayed] = useState(value);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-35%' });
+  const isInView = useInView(ref, { once: true, margin: '-10%' });
   
   useEffect(() => {
     if (isInView) {
+      // Reset to 0 first, then animate
+      setDisplayed('0');
+      
       const timeout = setTimeout(() => {
-        // Check if value is a number
         const numericValue = parseFloat(value);
         if (!isNaN(numericValue)) {
-          let start = 0;
+          const start = 0;
           const end = numericValue;
           const duration = 1000;
           const startTime = Date.now();
@@ -79,13 +81,14 @@ const About = () => {
         </motion.h2>
         
         <div className="grid md:grid-cols-2 gap-16">
-          {/* Left: Narrative */}
+          {/* Left: Education */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.52, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
-            className="space-y-6"
+            className="space-y-8"
           >
+            {/* College */}
             <div className="space-y-2">
               <p className="text-muted-foreground text-sm font-mono uppercase tracking-wider">
                 Education
@@ -96,19 +99,34 @@ const About = () => {
               <p className="text-foreground/90">
                 BE Computer Science and Engineering
               </p>
+              <div className="flex flex-wrap gap-x-12 gap-y-4 text-sm pt-2">
+                <div>
+                  <span className="text-muted-foreground">CGPA</span>
+                  <p className="text-2xl font-semibold text-primary mt-1">
+                    <AnimatedNumber value="8.388" delay={200} />
+                  </p>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">Graduation</span>
+                  <p className="text-2xl font-semibold mt-1">
+                    <AnimatedNumber value="2027" delay={300} />
+                  </p>
+                </div>
+              </div>
             </div>
             
-            <div className="flex flex-wrap gap-x-12 gap-y-4 text-sm">
-              <div>
-                <span className="text-muted-foreground">CGPA</span>
+            {/* 12th */}
+            <div className="space-y-2 pt-4 border-t border-border/40">
+              <p className="text-muted-foreground text-xs font-mono uppercase tracking-wider">
+                Senior Secondary (Class XII) — CBSE
+              </p>
+              <h3 className="text-lg font-medium">
+                Saraswathi Vidyalaya Senior Secondary School, Vadapalani
+              </h3>
+              <div className="pt-2">
+                <span className="text-muted-foreground text-sm">Board Examination Score</span>
                 <p className="text-2xl font-semibold text-primary mt-1">
-                  <AnimatedNumber value="8.388" delay={200} />
-                </p>
-              </div>
-              <div>
-                <span className="text-muted-foreground">Graduation</span>
-                <p className="text-2xl font-semibold mt-1">
-                  <AnimatedNumber value="2027" delay={300} />
+                  <AnimatedNumber value="93.8" delay={400} />%
                 </p>
               </div>
             </div>
