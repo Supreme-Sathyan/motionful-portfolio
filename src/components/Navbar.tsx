@@ -17,6 +17,13 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
+      // Check if at bottom of page - activate last nav item (contact)
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+      if (isAtBottom) {
+        setActiveSection('contact');
+        return;
+      }
+      
       // Find active section
       const sections = navItems.map(item => item.href.slice(1));
       for (const section of sections.reverse()) {
