@@ -4,7 +4,7 @@ import { useRef } from 'react';
 const achievements = [
   {
     title: 'Smart India Hackathon (Internal Round – SVCE)',
-    description: 'Secured Top 50 position at college level; shortlisted among Top 6 teams out of 500+ teams nationwide in the problem statement evaluation phase.',
+    description: 'Secured Top 50 position in the internal round at SVCE and was waitlisted among the Top 6 teams out of 500+ teams nationwide for the problem statement evaluation.',
   },
   {
     title: 'Visualizing Web Development 2025',
