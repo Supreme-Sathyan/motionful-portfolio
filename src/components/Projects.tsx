@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
-import { ExternalLink, X } from 'lucide-react';
+import { useRef, useState, useEffect } from 'react';
+import { ExternalLink } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -86,7 +86,7 @@ const ProjectCard = ({ project, index, isInView }: { project: Project; index: nu
     </div>
   );
 
-  const cardClasses = "group card-elevated p-6 cursor-pointer block";
+  const cardClasses = "group card-elevated card-reflective card-spotlight p-6 cursor-pointer block";
   const cardStyle = {
     transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
     boxShadow: isHovered 
@@ -128,25 +128,38 @@ const ProjectCard = ({ project, index, isInView }: { project: Project; index: nu
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-15%' });
+  const [dotGridVisible, setDotGridVisible] = useState(false);
+
+  // Fade in dot grid when section is in view
+  useEffect(() => {
+    if (isInView) {
+      const timer = setTimeout(() => setDotGridVisible(true), 200);
+      return () => clearTimeout(timer);
+    }
+  }, [isInView]);
   
   return (
-    <section id="projects" ref={sectionRef} className="py-32 relative">
+    <section 
+      id="projects" 
+      ref={sectionRef} 
+      className={`py-32 relative dot-grid ${dotGridVisible ? 'visible' : ''}`}
+    >
       <div className="section-fade absolute inset-0 pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.h2
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.52, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           className="text-3xl md:text-4xl font-semibold mb-4"
         >
           Projects & Research
         </motion.h2>
         
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.52, ease: [0.4, 0, 0.2, 1], delay: 0.07 }}
+          transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: 0.07 }}
           className="text-muted-foreground mb-16 max-w-xl"
         >
           Building intelligent solutions across legal tech, smart environments, and tourism

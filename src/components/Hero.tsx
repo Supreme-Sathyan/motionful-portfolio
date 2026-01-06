@@ -2,9 +2,47 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Github } from 'lucide-react';
 
+// Split text animation for hero headline
+const SplitText = ({ children, className }: { children: string; className?: string }) => {
+  const words = children.split(' ');
+  
+  return (
+    <span className={className}>
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.5, 
+            ease: [0.4, 0, 0.2, 1], 
+            delay: i * 0.07 
+          }}
+          className="inline-block mr-[0.25em]"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </span>
+  );
+};
+
+// Blur text animation for subheading
+const BlurText = ({ children, delay = 0 }: { children: string; delay?: number }) => {
+  return (
+    <motion.span
+      initial={{ opacity: 0, filter: 'blur(8px)' }}
+      animate={{ opacity: 1, filter: 'blur(0px)' }}
+      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay }}
+    >
+      {children}
+    </motion.span>
+  );
+};
+
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center noise">
+    <section className="relative min-h-screen flex items-center justify-center dark-veil">
       {/* Flat dark background */}
       <div className="absolute inset-0 bg-background" />
       
@@ -16,41 +54,26 @@ const Hero = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl">
-          {/* Name */}
-          <motion.h1
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
-            className="text-5xl md:text-7xl font-semibold tracking-tight mb-4"
-          >
-            S Sathyan
-          </motion.h1>
+          {/* Name - Split Text Animation */}
+          <h1 className="text-5xl md:text-7xl font-semibold tracking-tight mb-4">
+            <SplitText>S Sathyan</SplitText>
+          </h1>
           
-          {/* Title */}
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1], delay: 0.08 }}
-            className="text-xl md:text-2xl text-muted-foreground font-light mb-6"
-          >
-            Backend & AI-Focused Computer Science Engineer
-          </motion.p>
+          {/* Title - Blur Text Animation */}
+          <p className="text-xl md:text-2xl text-muted-foreground font-light mb-6">
+            <BlurText delay={0.35}>Backend & AI-Focused Computer Science Engineer</BlurText>
+          </p>
           
-          {/* Subheading */}
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1], delay: 0.16 }}
-            className="text-lg text-muted-foreground/70 mb-12 max-w-xl"
-          >
-            Building intelligent systems, legal tech, and AI-driven platforms
-          </motion.p>
+          {/* Subheading - Blur Text Animation */}
+          <p className="text-lg text-muted-foreground/70 mb-12 max-w-xl">
+            <BlurText delay={0.5}>Building intelligent systems, legal tech, and AI-driven platforms</BlurText>
+          </p>
           
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1], delay: 0.24 }}
+            transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1], delay: 0.65 }}
             className="flex flex-wrap gap-4"
           >
             <Button
@@ -80,7 +103,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.45 }}
+        transition={{ delay: 1.2, duration: 0.45 }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2"
       >
         <motion.div
