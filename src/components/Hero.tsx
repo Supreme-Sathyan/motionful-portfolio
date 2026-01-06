@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Github } from 'lucide-react';
+import LetterGlitch from './LetterGlitch';
 
 // Split text animation for hero headline
 const SplitText = ({ children, className }: { children: string; className?: string }) => {
@@ -42,15 +43,9 @@ const BlurText = ({ children, delay = 0 }: { children: string; delay?: number })
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center dark-veil">
-      {/* Flat dark background */}
-      <div className="absolute inset-0 bg-background" />
-      
-      {/* Very subtle glow - controlled */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/3 rounded-full blur-[120px]" />
-      
-      {/* Bottom gradient fade - grounds the section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background/80 to-transparent pointer-events-none" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Letter Glitch Background */}
+      <LetterGlitch glitchSpeed={80} centerVignette={true} smooth={true} />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl">
