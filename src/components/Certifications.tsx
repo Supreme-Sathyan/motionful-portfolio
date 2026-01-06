@@ -13,29 +13,31 @@ const Certifications = () => {
   const isInView = useInView(sectionRef, { once: true, margin: '-20%' });
   
   return (
-    <section ref={sectionRef} className="py-32 relative">
+    <section ref={sectionRef} className="py-32 relative shape-blur">
       <div className="section-fade absolute inset-0 pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
+        {/* Section heading with scroll reveal */}
         <motion.h2
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           className="text-3xl md:text-4xl font-semibold mb-16"
         >
           Certifications
         </motion.h2>
         
+        {/* Animated list - items animate one by one */}
         <div className="grid md:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ 
-                duration: 0.45, 
+                duration: 0.5, 
                 ease: [0.4, 0, 0.2, 1], 
-                delay: 0.1 + index * 0.08 
+                delay: 0.1 + index * 0.1 
               }}
               className="p-6 rounded-lg bg-card border border-border/40 hover:border-primary/40 transition-colors duration-200 group"
             >
