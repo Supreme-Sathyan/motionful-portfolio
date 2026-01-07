@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import DarkVeil from './DarkVeil';
 
 interface AnimatedNumberProps {
   value: string;
@@ -67,8 +68,12 @@ const About = () => {
   const isInView = useInView(sectionRef, { once: true, margin: '-20%' });
   
   return (
-    <section id="about" ref={sectionRef} className="py-32 relative dark-veil">
-      <div className="section-fade absolute inset-0 pointer-events-none" />
+    <section id="about" ref={sectionRef} className="py-32 relative overflow-hidden">
+      {/* Dark Veil WebGL Background */}
+      <div className="absolute inset-0 opacity-30">
+        <DarkVeil speed={0.3} hueShift={180} />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.h2
