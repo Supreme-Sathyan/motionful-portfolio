@@ -142,7 +142,7 @@ const Projects = () => {
     <section 
       id="projects" 
       ref={sectionRef} 
-      className={`py-32 relative dot-grid ${dotGridVisible ? 'visible' : ''}`}
+      className={`py-32 relative grid-motion ${dotGridVisible ? 'visible' : ''}`}
     >
       <div className="section-fade absolute inset-0 pointer-events-none" />
       

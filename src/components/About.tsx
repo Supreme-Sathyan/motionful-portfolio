@@ -67,7 +67,7 @@ const About = () => {
   const isInView = useInView(sectionRef, { once: true, margin: '-20%' });
   
   return (
-    <section id="about" ref={sectionRef} className="py-32 relative">
+    <section id="about" ref={sectionRef} className="py-32 relative dark-veil">
       <div className="section-fade absolute inset-0 pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">

@@ -29,7 +29,7 @@ const Skills = () => {
   const isInView = useInView(sectionRef, { once: true, margin: '-20%' });
   
   return (
-    <section id="skills" ref={sectionRef} className="py-32 relative">
+    <section id="skills" ref={sectionRef} className={`py-32 relative dot-grid ${isInView ? 'visible' : ''}`}>
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: 12 }}

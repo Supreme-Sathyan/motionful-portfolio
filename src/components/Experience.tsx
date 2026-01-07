@@ -16,7 +16,7 @@ const Experience = () => {
   const isInView = useInView(sectionRef, { once: true, margin: '-20%' });
   
   return (
-    <section id="experience" ref={sectionRef} className="py-32 relative shape-blur">
+    <section id="experience" ref={sectionRef} className={`py-32 relative shape-blur dither ${isInView ? 'visible' : ''}`}>
       <div className="container mx-auto px-6">
         {/* Section heading with scroll reveal */}
         <motion.h2
