@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github } from 'lucide-react';
+import { ArrowDown, Github, Download } from 'lucide-react';
 import LetterGlitch from './LetterGlitch';
 
 // Split text animation for hero headline
@@ -78,6 +78,17 @@ const Hero = () => {
             >
               View Projects
               <ArrowDown className="ml-2 h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-primary/50 text-primary hover:bg-primary/10 transition-colors duration-200"
+              asChild
+            >
+              <a href="/S2resume.pdf" download="S_Sathyan_Resume.pdf">
+                <Download className="mr-2 h-4 w-4" />
+                Resume
+              </a>
             </Button>
             <Button
               variant="outline"
