@@ -27,7 +27,6 @@ const projects: Project[] = [
     tech: ['CNN', 'SVM', 'LSTM', 'Multimodal Sensing'],
     outcome: '~85% classification accuracy with sub-2-second response times',
     type: 'Published Research Paper',
-    isResearch: true,
   },
   {
     title: 'Jharkhand Tourism Platform',
