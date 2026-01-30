@@ -4,23 +4,23 @@ import { useRef } from 'react';
 const skillGroups = [
   {
     category: 'Backend',
-    skills: ['Flask', 'Node.js', 'REST APIs', 'MySQL', 'Supabase'],
+    skills: ['Flask', 'Node.js', 'RESTful APIs'],
   },
   {
-    category: 'Languages',
-    skills: ['Python', 'Java', 'C'],
+    category: 'AI / ML',
+    skills: ['Pandas', 'Scikit-learn', 'Gemini API'],
   },
   {
-    category: 'Web',
-    skills: ['HTML', 'CSS', 'JavaScript'],
+    category: 'Databases',
+    skills: ['MySQL', 'Supabase'],
+  },
+  {
+    category: 'Frontend',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React'],
   },
   {
     category: 'Tools',
     skills: ['Git', 'GitHub', 'Vercel'],
-  },
-  {
-    category: 'Soft Skills',
-    skills: ['Proactive', 'Analytical', 'Collaborative'],
   },
 ];
 

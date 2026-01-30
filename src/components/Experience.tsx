@@ -4,10 +4,17 @@ import { useRef } from 'react';
 const workExperience = [
   {
     title: 'Project Management Intern',
-    company: 'ECLearnix Edtech Private Limited',
+    company: 'ECLearnix EdTech Pvt. Ltd.',
     type: 'Internship',
-    duration: 'Dec 2025 - Jan 2026',
-    location: 'Chennai, Tamil Nadu, India · Remote',
+    duration: 'Dec 2025 – Jan 2026',
+    location: 'Remote (Online) · Coimbatore, Tamil Nadu',
+    highlights: [
+      'Conducted competitor and market analysis of 6+ EdTech platforms',
+      'Performed UX evaluations across 10+ website pages, identifying 3 key usability issues',
+      'Analysed 5+ operational and engagement risks in online academic events',
+      'Evaluated 30+ posts/videos across Instagram, LinkedIn, and YouTube',
+      'Documented 20+ business requirements and translated into usability-focused prototypes',
+    ],
   },
 ];
 
@@ -117,6 +124,29 @@ const Experience = () => {
                     <p>{exp.duration}</p>
                     <p>{exp.location}</p>
                   </motion.div>
+                  
+                  {exp.highlights && (
+                    <motion.ul
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ 
+                        duration: 0.4, 
+                        ease: [0.4, 0, 0.2, 1], 
+                        delay: 0.55 + index * 0.1 
+                      }}
+                      className="mt-4 space-y-2"
+                    >
+                      {exp.highlights.map((highlight, hIndex) => (
+                        <li 
+                          key={hIndex}
+                          className="text-sm text-muted-foreground flex items-start gap-2"
+                        >
+                          <span className="text-primary/60 mt-1.5">•</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
                 </div>
               </motion.div>
             ))}
