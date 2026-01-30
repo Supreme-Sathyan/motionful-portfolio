@@ -3,12 +3,16 @@ import { useRef } from 'react';
 
 const achievements = [
   {
-    title: 'Smart India Hackathon (Internal Round – SVCE)',
-    description: 'Secured Top 50 position in the internal round at SVCE and was waitlisted among the Top 6 teams out of 500+ teams nationwide for the problem statement evaluation.',
+    title: 'Visa 24-Hour AI Hackathon – IIT Madras',
+    description: 'Advanced to the final round, placing among the Top 10 teams out of 500+ teams, following preliminary evaluation rounds focused on AI-driven solutions.',
   },
   {
-    title: 'Visualizing Web Development 2025',
-    description: 'Achieved Top 3 position for frontend and visualization excellence, conducted by DSC SVCE.',
+    title: 'Smart India Hackathon (Internal Round – SVCE)',
+    description: 'Secured Top 50 position at the college level; waitlisted at the national evaluation stage, ranking among the Top 6 teams out of 500+ teams nationwide.',
+  },
+  {
+    title: 'Visualising Web Development 2025',
+    description: 'Achieved Top 3 position for frontend and visualisation excellence, conducted by DSC SVCE.',
   },
   {
     title: 'Eclearnix Hackathon',
