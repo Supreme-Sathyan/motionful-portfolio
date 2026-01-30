@@ -15,26 +15,26 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Data Quality Intelligence Platform',
-    problem: 'Privacy-first, GenAI-powered data quality for enterprise payment systems',
-    tech: ['TypeScript', 'Supabase Edge Functions', 'Gemini API'],
-    outcome: 'Real-time multi-dimensional CSV analysis with compliance-aware insights',
-    origin: 'IIT Madras Visa 24-Hour AI Hackathon',
+    title: 'VERDIC-AI',
+    problem: 'AI-driven legal assistance',
+    tech: ['Flask', 'Pandas', 'Scikit-learn', 'Gemini API'],
+    outcome: 'Case prediction + legal query chatbot',
+    origin: 'Ease the Error Hackathon',
   },
   {
-    title: 'E-R Homie',
-    problem: 'AI-driven emotion-aware smart home system using multimodal sensing',
-    tech: ['CNN', 'SVM', 'LSTM', 'Python'],
-    outcome: '~85% classification accuracy with sub-2-second response times',
+    title: 'ER Homie',
+    problem: 'Emotion-aware smart environment',
+    tech: ['Sensors', 'ML Concept', 'Simulations'],
+    outcome: 'Feasibility study for adaptive environments',
     type: 'Research paper',
     isResearch: true,
   },
   {
     title: 'Jharkhand Tourism Platform',
-    problem: 'Full-stack platform for destinations and travel data management',
+    problem: 'Smart tourism experience for SIH',
     tech: ['React', 'Node.js', 'Supabase', 'Gemini API'],
-    outcome: 'AI chatbot + smart itinerary planner with personalised routes',
-    origin: 'Smart India Hackathon | Backend & Deployment',
+    outcome: 'Smart itinerary planner with chatbot',
+    origin: 'Backend & deployment (Vercel)',
     liveDemo: 'https://jharkhand-lovat.vercel.app',
   },
 ];

@@ -4,16 +4,10 @@ import { useRef } from 'react';
 const workExperience = [
   {
     title: 'Project Management Intern',
-    company: 'ECLearnix EdTech Pvt. Ltd.',
+    company: 'ECLearnix Edtech Private Limited',
     type: 'Internship',
-    duration: 'Dec 2025 – Jan 2026',
-    location: 'Remote (Online) | Coimbatore, Tamil Nadu',
-    bullets: [
-      'Conducted competitor and market analysis of 6+ EdTech platforms and performed UX evaluations across 10+ website pages',
-      'Analysed 5+ operational and engagement risks in online academic events with structured mitigation strategies',
-      'Evaluated Instagram, LinkedIn, and YouTube content, reviewing 30+ posts/videos for engagement patterns',
-      'Documented 20+ business and user requirements into a usability-focused event listing prototype',
-    ],
+    duration: 'Dec 2025 - Jan 2026',
+    location: 'Chennai, Tamil Nadu, India · Remote',
   },
 ];
 
@@ -123,26 +117,6 @@ const Experience = () => {
                     <p>{exp.duration}</p>
                     <p>{exp.location}</p>
                   </motion.div>
-
-                  {exp.bullets && (
-                    <motion.ul
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={isInView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ 
-                        duration: 0.4, 
-                        ease: [0.4, 0, 0.2, 1], 
-                        delay: 0.55 + index * 0.1 
-                      }}
-                      className="mt-4 space-y-2"
-                    >
-                      {exp.bullets.map((bullet, bulletIndex) => (
-                        <li key={bulletIndex} className="text-sm text-muted-foreground/90 flex items-start gap-2">
-                          <span className="text-primary/60 mt-1.5">•</span>
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </motion.ul>
-                  )}
                 </div>
               </motion.div>
             ))}
