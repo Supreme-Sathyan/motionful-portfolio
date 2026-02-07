@@ -37,11 +37,4 @@ Built with a focus on **clean UI engineering**, **smooth transitions**, and **st
 - Certifications
 - Contact
 
----
 
-## 🚀 Getting Started
-
-### 1. Clone the repo
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
