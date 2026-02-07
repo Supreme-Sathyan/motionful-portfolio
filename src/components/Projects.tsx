@@ -20,6 +20,7 @@ const projects: Project[] = [
     tech: ['TypeScript', 'Supabase Edge Functions', 'Gemini API'],
     outcome: 'Real-time multi-dimensional CSV analysis with compliance-aware insights',
     origin: 'IIT Madras Visa 24-Hour AI Hackathon',
+    liveDemo: 'https://payment-quality-ai.vercel.app/',
   },
   {
     title: 'E-R Homie',
@@ -27,6 +28,7 @@ const projects: Project[] = [
     tech: ['CNN', 'SVM', 'LSTM', 'Multimodal Sensing'],
     outcome: '~85% classification accuracy with sub-2-second response times',
     type: 'Published Research Paper',
+    isResearch: true,
   },
   {
     title: 'Jharkhand Tourism Platform',
@@ -43,6 +45,7 @@ const projects: Project[] = [
     outcome: 'Case prediction + legal query chatbot',
     origin: 'Ease the Error Hackathon',
   },
+  
 ];
 
 const ProjectCard = ({ project, index, isInView }: { project: Project; index: number; isInView: boolean }) => {
@@ -60,7 +63,7 @@ const ProjectCard = ({ project, index, isInView }: { project: Project; index: nu
           </h3>
           {project.isResearch && (
             <span className="text-xs font-mono uppercase tracking-wider text-primary/80">
-              IEEE Review
+              Published Paper
             </span>
           )}
         </div>

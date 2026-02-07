@@ -60,7 +60,7 @@ const AnimatedNumber = ({ value, delay }: AnimatedNumberProps) => {
 const stats = [
   { label: 'Hackathons Participated', value: 'Multiple', subtext: 'National & College' },
   { label: 'Core Domains', value: '3+', subtext: 'Backend, AI, Full-Stack' },
-  { label: 'Research Work', value: '1', subtext: 'Under IEEE Review' },
+  { label: 'Research Work', value: '1', subtext: 'Published Paper' },
 ];
 
 const About = () => {
