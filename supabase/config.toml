@@ -1,0 +1,4 @@
+project_id = "kpvkafwupangzzzzxbvs"
+
+[functions.portfolio-chat]
+verify_jwt = false

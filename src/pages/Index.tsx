@@ -8,6 +8,7 @@ import Experience from '@/components/Experience';
 import Achievements from '@/components/Achievements';
 import Certifications from '@/components/Certifications';
 import Footer from '@/components/Footer';
+import Chatbot from '@/components/Chatbot';
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <Achievements />
       <Certifications />
       <Footer />
+      <Chatbot />
     </main>
   );
 };
