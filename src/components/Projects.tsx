@@ -40,9 +40,9 @@ const projects: Project[] = [
   },
   {
     title: 'VERDIC-AI',
-    problem: 'AI-driven legal assistance',
-    tech: ['Flask', 'Pandas', 'Scikit-learn', 'Gemini API'],
-    outcome: 'Case prediction + legal query chatbot',
+    problem: 'Flask-based legal workflow optimisation with NLP & ML',
+    tech: ['Flask', 'NLP', 'ML', 'Gemini API'],
+    outcome: 'Contract review, compliance analysis, precedent search & AI legal chatbot',
     origin: 'Ease the Error Hackathon',
   },
   

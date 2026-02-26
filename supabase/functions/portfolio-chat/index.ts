@@ -75,11 +75,12 @@ Projects & Research:
    - Live demo: https://jharkhand-lovat.vercel.app
 
 4. VERDIC-AI (Ease the Error Hackathon):
-   - AI-driven legal assistant
-   - Built using Flask
-   - Backend ML model for case prediction using Pandas + Scikit-learn
+   - Flask-based backend system with HTML interface for legal workflow optimisation
+   - NLP-powered modules for automated contract review, translation, and compliance
+   - Legal precedent analyser using backend ML models on legal data
+   - Automated legal documentation generation
+   - AI-driven legal chatbot for queries, document preparation, and scheduling
    - Integrated Gemini-powered chatbot for law/order-related queries
-   - Focus: legal workflow automation
 
 Work Experience:
 - Project Management Intern – ECLearnix EdTech Pvt. Ltd.
