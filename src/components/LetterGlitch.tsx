@@ -142,7 +142,12 @@ const LetterGlitch = ({
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,hsl(216_20%_6%/0.7)_50%,hsl(216_20%_6%/0.95)_100%)]" />
       )}
       {/* Bottom fade for smooth transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background via-background/80 to-transparent" />
+      <div
+        className="absolute bottom-0 left-0 right-0 h-72"
+        style={{
+          background: 'linear-gradient(to top, hsl(216 22% 6.5%) 0%, hsl(216 22% 6.5% / 0.6) 45%, transparent 100%)',
+        }}
+      />
     </div>
   );
 };

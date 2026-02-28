@@ -149,7 +149,7 @@ const About = () => {
                   ease: [0.4, 0, 0.2, 1], 
                   delay: 0.15 + index * 0.09 
                 }}
-                className="flex items-start gap-4 p-4 rounded-lg bg-card border border-border/40"
+                className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border/50 hover:border-primary/20 transition-all duration-200"
               >
                 <div className="flex-1">
                   <p className="text-sm text-muted-foreground mb-1">{stat.label}</p>

@@ -66,7 +66,7 @@ const Skills = () => {
                       ease: [0.4, 0, 0.2, 1], 
                       delay: 0.15 + groupIndex * 0.08 + skillIndex * 0.09 
                     }}
-                    className="px-4 py-2 rounded-md bg-secondary text-secondary-foreground text-sm font-medium border border-border/40 hover:border-primary/40 transition-colors duration-200"
+                    className="px-4 py-2 rounded-full bg-secondary/80 text-secondary-foreground text-sm font-medium border border-border/40 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 hover:scale-[1.02]"
                   >
                     {skill}
                   </motion.span>

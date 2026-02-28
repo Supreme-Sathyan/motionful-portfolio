@@ -12,17 +12,33 @@ import Chatbot from '@/components/Chatbot';
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background text-foreground overflow-x-hidden global-noise">
+    <main className="min-h-screen bg-transparent text-foreground overflow-x-hidden global-noise">
       <Navbar />
       <Hero />
-      <Summary />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Achievements />
-      <Certifications />
-      <Footer />
+      <div className="section-smooth">
+        <Summary />
+      </div>
+      <div className="section-smooth">
+        <About />
+      </div>
+      <div className="section-smooth">
+        <Skills />
+      </div>
+      <div className="section-smooth">
+        <Projects />
+      </div>
+      <div className="section-smooth">
+        <Experience />
+      </div>
+      <div className="section-smooth">
+        <Achievements />
+      </div>
+      <div className="section-smooth">
+        <Certifications />
+      </div>
+      <div className="section-smooth">
+        <Footer />
+      </div>
       <Chatbot />
     </main>
   );

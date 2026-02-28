@@ -20,7 +20,7 @@ const Summary = () => {
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Computer Science undergraduate with hands-on experience in building{' '}
             <span className="text-foreground font-medium">AI-driven and backend systems</span>{' '}
-            through national-level hackathons, research publications, and industry internships. 
+            through national-level hackathons, research publication, and industry internship. 
             Developed GenAI-powered platforms for{' '}
             <span className="text-foreground font-medium">data quality intelligence</span>,{' '}
             <span className="text-foreground font-medium">legal automation</span>, and{' '}
@@ -38,7 +38,7 @@ const Summary = () => {
                   ease: [0.4, 0, 0.2, 1], 
                   delay: 0.2 + index * 0.08 
                 }}
-                className="px-3 py-1 text-xs font-mono bg-secondary/50 rounded text-muted-foreground border border-border/40"
+                className="px-3 py-1.5 text-xs font-mono bg-secondary/60 rounded-full text-muted-foreground border border-border/40"
               >
                 {tag}
               </motion.span>

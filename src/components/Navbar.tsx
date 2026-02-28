@@ -59,7 +59,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="font-mono text-sm text-primary font-medium">
+        <a href="#" className="font-mono text-sm text-primary font-medium px-3 py-1.5 rounded-lg hover:bg-primary/10 transition-colors duration-200">
           S2
         </a>
         
@@ -69,13 +69,17 @@ const Navbar = () => {
             <a
               key={item.href}
               href={item.href}
-              className="relative text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className={`relative text-sm px-3 py-2 rounded-lg transition-all duration-200 ${
+                activeSection === item.href.slice(1)
+                  ? 'text-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-primary/5'
+              }`}
             >
               {item.label}
               {activeSection === item.href.slice(1) && (
                 <motion.span
                   layoutId="activeSection"
-                  className="absolute -bottom-1 left-0 right-0 h-px bg-primary"
+                  className="absolute inset-0 rounded-lg bg-primary/10 border border-primary/20 -z-10"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}
@@ -86,7 +90,7 @@ const Navbar = () => {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
-          className="md:hidden relative z-50 p-2 rounded-md text-muted-foreground hover:text-foreground transition-colors"
+          className="md:hidden relative z-50 p-2.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-200"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -104,7 +108,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.35, ease: EASE_SMOOTH }}
-            className="md:hidden absolute top-full right-4 mt-2 w-48 rounded-xl border border-border/40 bg-background/80 backdrop-blur-xl shadow-2xl p-3 flex flex-col gap-1"
+            className="md:hidden absolute top-full right-4 mt-2 w-48 rounded-2xl border border-border/50 bg-card/95 backdrop-blur-xl shadow-xl p-3 flex flex-col gap-1"
           >
             {navItems.map((item, i) => (
               <motion.a
@@ -114,7 +118,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, ease: EASE_SMOOTH, delay: i * 0.05 }}
-                className={`text-sm px-3 py-2 rounded-lg transition-colors duration-200 ${
+                className={`text-sm px-3 py-2.5 rounded-xl transition-all duration-200 ${
                   activeSection === item.href.slice(1)
                     ? 'text-foreground bg-accent/20'
                     : 'text-muted-foreground hover:text-foreground hover:bg-accent/10'

@@ -39,7 +39,7 @@ const Certifications = () => {
                 ease: [0.4, 0, 0.2, 1], 
                 delay: 0.1 + index * 0.1 
               }}
-              className="p-6 rounded-lg bg-card border border-border/40 hover:border-primary/40 transition-colors duration-200 group"
+              className="p-6 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-200 group"
             >
               <Award className="h-5 w-5 text-primary/70 group-hover:text-primary mb-4 transition-colors duration-200" />
               <p className="font-medium">{cert}</p>

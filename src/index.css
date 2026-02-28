@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -41,7 +41,7 @@
     --input: 216 14% 16%;
     --ring: 169 40% 51%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     /* Motion Tokens - measured, not playful */
     --ease-smooth: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -51,9 +51,9 @@
     --stagger-sm: 80ms;
     --stagger-md: 120ms;
     
-    /* Shadow tokens - subtle, controlled */
-    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.5);
-    --shadow-card-hover: 0 8px 32px -8px hsl(169 40% 51% / 0.12);
+    /* Shadow tokens - modern, soft */
+    --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.3), 0 4px 12px -2px hsl(0 0% 0% / 0.4);
+    --shadow-card-hover: 0 8px 24px -4px hsl(0 0% 0% / 0.4), 0 0 0 1px hsl(169 40% 51% / 0.08);
   }
 
   .dark {
@@ -93,14 +93,21 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply text-foreground antialiased;
+    background: radial-gradient(
+      ellipse 120% 100% at 50% 0%,
+      hsl(216 22% 8.5%) 0%,
+      hsl(216 22% 7%) 40%,
+      hsl(216 22% 6.5%) 100%
+    );
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     line-height: 1.7;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
   }
 
   ::selection {
@@ -110,29 +117,31 @@
 }
 
 @layer components {
-  /* Gradual blur navbar */
+  /* Gradual blur navbar - modern glass */
   .glass {
-    @apply backdrop-blur-md;
-    background: hsl(216 20% 9% / 0.85);
-    border-bottom: 1px solid hsl(216 14% 16% / 0.5);
+    @apply backdrop-blur-xl;
+    background: hsl(216 20% 9% / 0.72);
+    border-bottom: 1px solid hsl(216 14% 16% / 0.4);
   }
 
   .glass-scrolled {
     @apply backdrop-blur-xl;
-    background: hsl(216 20% 9% / 0.92);
-    border-bottom: 1px solid hsl(216 14% 16% / 0.6);
+    background: hsl(216 20% 9% / 0.88);
+    border-bottom: 1px solid hsl(216 14% 16% / 0.5);
   }
 
   .card-elevated {
     background: hsl(var(--card));
     box-shadow: var(--shadow-card);
-    @apply border border-border/40 rounded-lg;
+    @apply border border-border/50 rounded-xl;
     transition: box-shadow var(--duration-short) var(--ease-smooth),
-                transform var(--duration-short) var(--ease-smooth);
+                transform var(--duration-short) var(--ease-smooth),
+                border-color var(--duration-short) var(--ease-smooth);
   }
 
   .card-elevated:hover {
     box-shadow: var(--shadow-card-hover);
+    @apply border-primary/20;
   }
 
   /* Reflective card - subtle reflection effect */
@@ -178,7 +187,12 @@
   }
 
   .section-fade {
-    background: linear-gradient(180deg, transparent 0%, hsl(216 22% 5% / 0.5) 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(216 22% 6% / 0.2) 50%,
+      hsl(216 22% 6% / 0.5) 100%
+    );
   }
 
   /* Dark veil - hero and section transitions */
@@ -192,8 +206,13 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px;
-    background: linear-gradient(180deg, transparent 0%, hsl(216 22% 7%) 100%);
+    height: 240px;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(216 22% 7% / 0.4) 40%,
+      hsl(216 22% 7%) 100%
+    );
     pointer-events: none;
   }
 
@@ -207,7 +226,7 @@
     position: absolute;
     inset: 0;
     background-image: radial-gradient(
-      hsl(210 11% 91% / 0.04) 1px,
+      hsl(210 11% 91% / 0.02) 1px,
       transparent 1px
     );
     background-size: 24px 24px;
@@ -230,8 +249,8 @@
     position: absolute;
     inset: 0;
     background-image: 
-      linear-gradient(hsl(210 11% 91% / 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(210 11% 91% / 0.03) 1px, transparent 1px);
+      linear-gradient(hsl(210 11% 91% / 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(210 11% 91% / 0.015) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     opacity: 0;
@@ -252,7 +271,7 @@
     }
   }
 
-  /* Dither texture - for experience section */
+  /* Dither texture - for experience section (refined) */
   .dither {
     position: relative;
   }
@@ -261,7 +280,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='1' height='1' fill='%23ffffff' opacity='0.02'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%23ffffff' opacity='0.02'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='1' height='1' fill='%23ffffff' opacity='0.015'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%23ffffff' opacity='0.015'/%3E%3C/svg%3E");
     background-size: 4px 4px;
     pointer-events: none;
     opacity: 0;
@@ -272,7 +291,7 @@
     opacity: 1;
   }
 
-  /* Subtle animated noise - very low opacity */
+  /* Subtle animated noise - minimal for polished look */
   .noise {
     position: relative;
   }
@@ -282,18 +301,18 @@
     position: absolute;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    opacity: 0.025;
+    opacity: 0.006;
     pointer-events: none;
     z-index: 0;
   }
 
-  /* Global noise layer */
+  /* Global noise layer - very subtle for polished look */
   .global-noise::after {
     content: '';
     position: fixed;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    opacity: 0.03;
+    opacity: 0.008;
     pointer-events: none;
     z-index: 9999;
   }
@@ -307,7 +326,12 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 0%, hsl(216 22% 5% / 0.6) 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(216 22% 6% / 0.2) 30%,
+      hsl(216 22% 5% / 0.5) 100%
+    );
     pointer-events: none;
   }
 
@@ -316,7 +340,7 @@
     position: absolute;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    opacity: 0.04;
+    opacity: 0.01;
     pointer-events: none;
   }
 
@@ -335,6 +359,45 @@
     height: 8px;
     border-radius: 50%;
     background: hsl(var(--primary));
+  }
+
+  /* Smooth section transitions - gradient fades at boundaries */
+  .section-smooth {
+    position: relative;
+  }
+
+  .section-smooth::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+      180deg,
+      hsl(216 22% 6.5% / 0.85) 0%,
+      hsl(216 22% 6.5% / 0.3) 50%,
+      transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .section-smooth::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+      0deg,
+      hsl(216 22% 6.5% / 0.85) 0%,
+      hsl(216 22% 6.5% / 0.3) 50%,
+      transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
   }
 
   /* Shape blur - section separators */

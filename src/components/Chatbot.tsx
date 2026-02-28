@@ -145,7 +145,7 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-1 rounded hover:bg-secondary/60"
+      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-1.5 rounded-lg hover:bg-secondary/60"
       aria-label="Copy response"
     >
       {copied ? (
@@ -394,7 +394,7 @@ export default function Chatbot() {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.35, ease: EASE_SMOOTH }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-[9998] flex items-center gap-2.5 px-5 py-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+            className="fixed bottom-6 right-6 z-[9998] flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 group"
             aria-label="Open chat assistant"
           >
             <MessageSquare className="w-4.5 h-4.5" />
@@ -433,14 +433,14 @@ export default function Chatbot() {
               <div className="flex items-center gap-1">
                 <button
                   onClick={clearChat}
-                  className="p-1.5 rounded-md hover:bg-secondary/60 transition-colors duration-200"
+                  className="p-1.5 rounded-lg hover:bg-secondary/60 transition-colors duration-200"
                   aria-label="Clear chat"
                 >
                   <Trash2 className="w-3.5 h-3.5 text-muted-foreground" />
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-1.5 rounded-md hover:bg-secondary/60 transition-colors duration-200"
+                  className="p-1.5 rounded-lg hover:bg-secondary/60 transition-colors duration-200"
                   aria-label="Close chat"
                 >
                   <X className="w-4 h-4 text-muted-foreground" />

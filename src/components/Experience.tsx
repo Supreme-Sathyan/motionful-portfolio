@@ -56,7 +56,7 @@ const Experience = () => {
                   ease: [0.4, 0, 0.2, 1], 
                   delay: 0.3 + index * 0.1 
                 }}
-                className="relative pl-12 md:pl-20"
+                className="relative pl-12 md:pl-20 py-6 pr-6 rounded-xl bg-card/40 border border-border/40 hover:border-primary/20 transition-all duration-200"
               >
                 {/* Dot - animated separately */}
                 <motion.div 

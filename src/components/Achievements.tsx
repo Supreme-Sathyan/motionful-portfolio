@@ -15,7 +15,7 @@ const achievements = [
     description: 'Achieved Top 3 position for frontend and visualisation excellence, conducted by DSC SVCE.',
   },
   {
-    title: 'Eclearnix Hackathon',
+    title: 'ECLearnix Hackathon',
     description: 'Reached the final round, leading to an internship opportunity based on performance and technical contribution.',
   },
 ];
@@ -58,7 +58,7 @@ const Achievements = () => {
                 ease: [0.4, 0, 0.2, 1],
                 delay: 0.2 + index * 0.1,
               }}
-              className="p-6 rounded-lg bg-secondary/30 border border-border/40 hover:border-primary/30 transition-colors duration-300"
+              className="p-6 rounded-xl bg-secondary/20 border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
             >
               <h3 className="text-lg font-medium text-foreground mb-2">
                 {achievement.title}

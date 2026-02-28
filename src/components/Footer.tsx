@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="py-16 border-t border-border/50 contact-veil relative">
+    <footer id="contact" className="py-16 border-t border-border/30 contact-veil relative">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
@@ -18,7 +18,7 @@ const Footer = () => {
               href="https://github.com/Supreme-Sathyan"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="p-2.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-200"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
@@ -27,14 +27,14 @@ const Footer = () => {
               href="https://www.linkedin.com/in/sathyan-s-aa7170321/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="p-2.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-200"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
               href="mailto:supremesathyan@gmail.com"
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="p-2.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-200"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />

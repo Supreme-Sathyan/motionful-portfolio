@@ -78,7 +78,7 @@ const ProjectCard = ({ project, index, isInView }: { project: Project; index: nu
         {project.tech.map((tech) => (
           <span
             key={tech}
-            className="px-2 py-1 text-xs font-mono bg-secondary/50 rounded text-muted-foreground"
+            className="px-2.5 py-1 text-xs font-mono bg-secondary/60 rounded-lg text-muted-foreground"
           >
             {tech}
           </span>
@@ -95,12 +95,12 @@ const ProjectCard = ({ project, index, isInView }: { project: Project; index: nu
     </div>
   );
 
-  const cardClasses = "group card-elevated card-reflective card-spotlight p-6 cursor-pointer block";
+  const cardClasses = "group card-elevated card-reflective card-spotlight p-6 cursor-pointer block rounded-xl";
   const cardStyle = {
-    transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
+    transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
     boxShadow: isHovered 
-      ? '0 8px 32px -8px hsl(169 40% 51% / 0.1)' 
-      : '0 4px 20px -4px hsl(0 0% 0% / 0.5)',
+      ? '0 12px 40px -8px hsl(0 0% 0% / 0.45), 0 0 0 1px hsl(169 40% 51% / 0.1)' 
+      : '0 1px 3px hsl(0 0% 0% / 0.3), 0 4px 12px -2px hsl(0 0% 0% / 0.4)',
   };
   
   return (
