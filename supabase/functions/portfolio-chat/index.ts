@@ -69,14 +69,13 @@ Projects & Research:
 3. Jharkhand Tourism Platform (Smart India Hackathon):
    - Full-stack platform using React, Node.js, Supabase
    - Manages destinations and travel data
-   - Integrated AI chatbot using Gemini API
-   - Smart itinerary planner generating personalized routes
+   - Itinerary planner with multilingual AI chatbot using Gemini API
    - Led backend development and deployment on Vercel
    - Live demo: https://jharkhand-lovat.vercel.app
 
 4. VERDIC-AI (Ease the Error Hackathon):
    - Flask-based backend system with HTML interface for legal workflow optimisation
-   - NLP-powered modules for automated contract review, translation, and compliance
+   - NLP-powered modules for automated translation
    - Legal precedent analyser using backend ML models on legal data
    - Automated legal documentation generation
    - AI-driven legal chatbot for queries, document preparation, and scheduling
