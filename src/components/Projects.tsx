@@ -34,7 +34,7 @@ const projects: Project[] = [
     title: 'Jharkhand Tourism Platform',
     problem: 'Smart tourism experience for SIH',
     tech: ['React', 'Node.js', 'Supabase', 'Gemini API'],
-    outcome: 'Smart itinerary planner with AI chatbot',
+    outcome: 'Itinerary planner with multilingual AI chatbot',
     origin: 'Backend & deployment (Vercel)',
     liveDemo: 'https://jharkhand-lovat.vercel.app',
   },
@@ -42,7 +42,7 @@ const projects: Project[] = [
     title: 'VERDIC-AI',
     problem: 'Flask-based legal workflow optimisation with NLP & ML',
     tech: ['Flask', 'NLP', 'ML', 'Gemini API'],
-    outcome: 'Contract review, compliance analysis, precedent search & AI legal chatbot',
+    outcome: 'Precedent search, documentation generation & AI legal chatbot',
     origin: 'Ease the Error Hackathon',
   },
   
