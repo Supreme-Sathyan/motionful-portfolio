@@ -2,7 +2,7 @@
 
 A motion-first personal portfolio website showcasing my projects, research work, hackathon achievements, and technical skillset.
 
-Built with a focus on **clean UI engineering**, **smooth transitions**, and **structured presentation** of work.
+Built with a focus on **clean UI engineering**, **smooth transitions**, and **structured presentation of work**, along with an **AI-powered portfolio assistant** that can answer questions about my projects, research, skills, and experience.
 
 ---
 
@@ -13,7 +13,7 @@ Built with a focus on **clean UI engineering**, **smooth transitions**, and **st
 - Projects & research showcase with interactive cards
 - Achievements, certifications, and experience timeline
 - Responsive design for mobile and desktop
-- AI-powered portfolio chatbot for quick Q&A (optional module)
+- AI-powered portfolio chatbot that answers questions about my education, projects, skills, research work, hackathons, experience, certifications, and contact details
 
 ---
 
@@ -22,7 +22,8 @@ Built with a focus on **clean UI engineering**, **smooth transitions**, and **st
 - React / Next.js  
 - Framer Motion (custom motion variants)
 - Tailwind CSS
-- Supabase (optional, for dynamic content / admin panel)
+- Supabase (DB and Backend)
+- Gemini API (AI chatbot)
 - Vercel (deployment)
 
 ---
@@ -36,5 +37,4 @@ Built with a focus on **clean UI engineering**, **smooth transitions**, and **st
 - Achievements
 - Certifications
 - Contact
-
-
+- AI Portfolio Assistant
