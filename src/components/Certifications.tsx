@@ -1,11 +1,12 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Award } from 'lucide-react';
+import { Award, BookOpen } from 'lucide-react';
 
 const certifications = [
-  'Java Programming Fundamentals',
-  'Java I/O with Case Studies',
-  'Multithreading in Java',
+  { name: 'Software Testing', issuer: 'NPTEL (IIT System)', icon: 'nptel' },
+  { name: 'Java Programming Fundamentals', issuer: 'Infosys Springboard', icon: 'infosys' },
+  { name: 'Java I/O with Case Studies', issuer: 'Infosys Springboard', icon: 'infosys' },
+  { name: 'Multithreading in Java', issuer: 'Infosys Springboard', icon: 'infosys' },
 ];
 
 const Certifications = () => {
@@ -17,7 +18,6 @@ const Certifications = () => {
       <div className="section-fade absolute inset-0 pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section heading with scroll reveal */}
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -27,11 +27,10 @@ const Certifications = () => {
           Certifications
         </motion.h2>
         
-        {/* Animated list - items animate one by one */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {certifications.map((cert, index) => (
             <motion.div
-              key={cert}
+              key={cert.name}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ 
@@ -39,10 +38,19 @@ const Certifications = () => {
                 ease: [0.4, 0, 0.2, 1], 
                 delay: 0.1 + index * 0.1 
               }}
-              className="p-6 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-200 group"
+              className="p-5 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-200 group flex flex-col"
             >
-              <Award className="h-5 w-5 text-primary/70 group-hover:text-primary mb-4 transition-colors duration-200" />
-              <p className="font-medium">{cert}</p>
+              <div className="flex items-center gap-3 mb-3">
+                {cert.icon === 'nptel' ? (
+                  <BookOpen className="h-4 w-4 text-primary/70 group-hover:text-primary transition-colors duration-200 shrink-0" />
+                ) : (
+                  <Award className="h-4 w-4 text-primary/70 group-hover:text-primary transition-colors duration-200 shrink-0" />
+                )}
+                <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground/60">
+                  {cert.issuer}
+                </span>
+              </div>
+              <p className="font-medium text-sm leading-snug">{cert.name}</p>
             </motion.div>
           ))}
         </div>

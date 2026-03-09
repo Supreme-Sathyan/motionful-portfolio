@@ -58,9 +58,10 @@ const AnimatedNumber = ({ value, delay }: AnimatedNumberProps) => {
 };
 
 const stats = [
-  { label: 'Hackathons Participated', value: 'Multiple', subtext: 'National & College' },
-  { label: 'Core Domains', value: '3+', subtext: 'Backend, AI, Full-Stack' },
-  { label: 'Research Work', value: '1', subtext: 'Published Paper' },
+  { label: 'Hackathons', value: '4+', subtext: 'National & College Level' },
+  { label: 'Core Domains', value: '3+', subtext: 'Backend, AI/ML, Full-Stack' },
+  { label: 'Research', value: '1', subtext: 'Published Paper' },
+  { label: 'Certifications', value: '4', subtext: 'NPTEL & Infosys Springboard' },
 ];
 
 const About = () => {
