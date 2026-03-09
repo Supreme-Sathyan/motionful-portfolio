@@ -29,6 +29,7 @@ const projects: Project[] = [
     outcome: '~85% classification accuracy with sub-2-second response times',
     type: 'Published Research Paper',
     isResearch: true,
+    liveDemo: 'https://rspsciencehub.com/index.php/journal/article/view/1011/853',
   },
   {
     title: 'Jharkhand Tourism Platform',
