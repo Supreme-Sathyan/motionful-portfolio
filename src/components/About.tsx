@@ -109,7 +109,7 @@ const About = () => {
                 <div>
                   <span className="text-muted-foreground">CGPA</span>
                   <p className="text-2xl font-semibold text-primary mt-1">
-                    <AnimatedNumber value="8.460" delay={200} />
+                    <AnimatedNumber value="8.410" delay={200} />
                   </p>
                 </div>
                 <div>
